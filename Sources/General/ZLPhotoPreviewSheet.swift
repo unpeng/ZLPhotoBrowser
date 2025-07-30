@@ -800,7 +800,7 @@ public class ZLPhotoPreviewSheet: UIView {
                     self?.requestSelectPhoto()
                 }
             }
-            vc.modalPresentationStyle = .fullScreen
+            vc.modalPresentationStyle = .pageSheet
             sender?.showDetailViewController(vc, sender: nil)
         }
         
@@ -817,7 +817,7 @@ public class ZLPhotoPreviewSheet: UIView {
     
     private func getImageNav(rootViewController: UIViewController) -> ZLImageNavController {
         let nav = ZLImageNavController(rootViewController: rootViewController)
-        nav.modalPresentationStyle = .fullScreen
+        nav.modalPresentationStyle = .pageSheet
         nav.selectImageBlock = { [weak self, weak nav] in
             self?.isSelectOriginal = nav?.isSelectedOriginal ?? false
             self?.arrSelectedModels.removeAll()
